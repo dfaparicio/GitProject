@@ -1,7 +1,7 @@
 # GitProject
 El aprendiz reconocerá y aplicará las funcionalidades principales de GitHub Projects como herramienta para la planificación, organización y seguimiento de actividades de desarrollo de software, de acuerdo con los principios de gestión ágil (Scrum/Kanban).
 
-# Módulo de Autenticación - Equipo [Pon aquí tu número o nombre]
+# Módulo de Autenticación - Equipo GitProjectDevs
 
 ## Objetivo
 Implementar un sistema de autenticación robusto y seguro siguiendo principios de **Clean Code**. Este módulo permite gestionar el ciclo de acceso del usuario, desde el registro inicial hasta la visualización de un panel de control protegido.
@@ -20,9 +20,9 @@ Implementar un sistema de autenticación robusto y seguro siguiendo principios d
 ## Gestión del Proyecto
 Para el seguimiento de tareas, utilizamos **GitHub Projects** aplicando metodologías ágiles. Puedes consultar el tablero en tiempo real aquí:
 
-👉 **[PEGA AQUÍ EL ENLACE A TU TABLERO DE GITHUB PROJECTS]**
+👉 **https://github.com/users/dfaparicio/projects/1**
 
 ### Características de la Gestión:
 * **Flujo de trabajo:** Pendiente -> En Proceso -> En Revisión -> Finalizado.
-* **Campos Personalizados:** Se integraron métricas de **Tiempo (horas)** y **Complejidad** para cada tarea.
+* **Campos Personalizados:** Se integraron métricas de **Tiempo 24 HORAS** y **Complejidad MEDIA - ALTA** para cada tarea.
 * **Colaboración:** Uso de Issues vinculados y asignación de responsabilidades por integrante.
