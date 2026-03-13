@@ -1,3 +1,39 @@
+# GitProject - Actividad 2
+El aprendiz reconocerá y aplicará las funcionalidades principales de GitHub Projects como herramienta para la planificación, organización y seguimiento de actividades de desarrollo de software, de acuerdo con los principios de gestión ágil (Scrum/Kanban).
+
+# Taller de Configuración - Equipo GitProjectDevs
+
+## Objetivo
+Configurar un entorno de trabajo inicial en GitHub Projects que permita el control de versiones y el seguimiento de tareas técnicas. Se busca aplicar etiquetas de prioridad y campos personalizados para optimizar la organización del equipo.
+
+## Integrantes
+* **dfaparicio** - Diego Aparicio
+* **Andft** - Andres Carvajal
+
+## Tareas Técnicas (Issues)
+| ID | Tarea del Proyecto | Criterios de Aceptación |
+|:---|:---|:---|
+| **TS01** | **Base de Datos:** Diseño de modelos y esquemas de persistencia. | Esquema Mongoose definido y conexión a clúster establecida. |
+| **TS02** | **Interfaz UI:** Maquetación de componentes visuales responsivos. | Vistas funcionales con validaciones de front-end activas. |
+| **TS03** | **Servidor:** Setup de API Rest y lógica de negocio. | Rutas configuradas y controladores de autenticación operativos. |
+| **TS04** | **Testing:** Creación de suite de pruebas unitarias. | Cobertura de tests para lógica de login y registro. |
+| **TS05** | **Documentación:** Elaboración de manual técnico. | README completo con guía de instalación y variables `.env`. |
+
+## Gestión del Proyecto
+Para esta actividad inicial, se configuró un tablero Kanban centrado en la priorización visual. Puedes consultar el progreso aquí:
+
+👉 **https://github.com/users/dfaparicio/projects/1**
+
+### Características de la Gestión:
+* **Flujo de trabajo:** Pendiente -> En Proceso -> En Revisión -> Finalizado.
+* **Campos Personalizados:** Se definieron métricas de **Tiempo Estimado (30 horas totales)** y **Nivel de Complejidad**.
+* **Colaboración:** Uso intensivo de **Labels** (High, Medium, Low) para identificar la urgencia de cada issue.
+
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
 # GitProject- Actividad 3
 El aprendiz reconocerá y aplicará las funcionalidades principales de GitHub Projects como herramienta para la planificación, organización y seguimiento de actividades de desarrollo de software, de acuerdo con los principios de gestión ágil (Scrum/Kanban).
 
