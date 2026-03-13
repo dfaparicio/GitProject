@@ -7,8 +7,8 @@ El aprendiz reconocerá y aplicará las funcionalidades principales de GitHub Pr
 Implementar un sistema de autenticación robusto y seguro siguiendo principios de **Clean Code**. Este módulo permite gestionar el ciclo de acceso del usuario, desde el registro inicial hasta la visualización de un panel de control protegido.
 
 ## Integrantes
-* **Fernando [Tu Apellido]** - Rol: [Ej. Backend Developer / Team Lead]
-* **[Nombre de tu compañero]** - Rol: [Ej. Frontend Developer / QA]
+* **dfaparicio - Diego Apario
+* **Andft - Andres Carvajal
 
 ## Historias de Usuario
 | ID | Historia de Usuario | Criterios de Aceptación |
