@@ -1,37 +1,74 @@
-# Sistema de Control de Asistencia Colegio San José
+# 🏫 Sistema de Gestión de Asistencia Colegio San José
 
-Este proyecto es una plataforma digital para la gestión de asistencia del Colegio San José, diseñada para docentes y personal administrativo.
+Proyecto de digitalización para el control de asistencia de 1.200 estudiantes y 60 docentes. Diseñado para optimizar el registro en menos de 2 minutos desde cualquier dispositivo.
 
-## Estructura del Proyecto
+---
 
-### 1. Num-Back (Backend)
-API REST desarrollada con Node.js y Express.
-- `/controllers`: Lógica de negocio (Autenticación, Gestión de Usuarios).
-- `/models`: Esquemas de datos con Mongoose (Usuario).
-- `/routes`: Definición de endpoints.
-- `/database`: Configuración de MongoDB.
-- `app.js`: Servidor principal.
+## 🛠️ Stack Tecnológico (Estándares Profesora)
 
-### 2. Num-Front (Frontend)
-Interfaz de usuario desarrollada con Vue 3, Quasar y Vite.
-- `/src/views`: Páginas principales (Login, Dashboard).
-- `/src/layouts`: Estructura base de la aplicación.
-- `/src/router`: Navegación y protección de rutas.
-- `/src/main.js`: Inicialización de la aplicación.
+### Backend (Num-Back)
+- **Node.js (LTS)** con módulos **ESM** (`import/export`).
+- **Express.js** con manejo de errores centralizado.
+- **MongoDB** + **Mongoose** (Modelos PascalCase, timestamps).
+- Sin carpeta `/src` (estructura directa por carpetas de funcionalidad).
 
-## Requerimientos Implementados
-- **HUS-01:** Autenticación de Usuarios (Login) con validación de dominio institucional y persistencia en `localStorage`.
-- **HUS-02:** Registro de Nuevos Usuarios con políticas de seguridad en contraseñas.
-- **HUS-03:** Dashboard Docente con visualización de horario, alertas críticas y acceso rápido a toma de asistencia.
+### Frontend (Num-Front)
+- **Vue 3** (Composition API) + **Vite**.
+- **Quasar Framework** (UI) + **Vue Router**.
+- **LocalStorage** para persistencia funcional de sesión.
 
-## Gestión del Proyecto
-El detalle de las tareas, tiempos estimados y organización del equipo se encuentra en el archivo [PROJECT_MANAGEMENT.md](./PROJECT_MANAGEMENT.md).
+---
 
-### Ramas de Desarrollo
-- `main`: Código estable.
-- `andft`: Desarrollo de componentes Frontend y persistencia local.
-- `dfaparicio`: Desarrollo de lógica de Backend y API.
+## 📂 Arquitectura de Carpetas
+- `Num-Back/`: `/controllers`, `/database`, `/models`, `/routes`, `/middlewares`.
+- `Num-Front/`: `/src/views`, `/src/layouts`, `/src/router`, `/src/services`.
 
-## Tecnologías Utilizadas
-- **Backend:** Node.js (ESM), Express, Mongoose, Dotenv, Cors.
-- **Frontend:** Vue 3 (Composition API), Quasar Framework, Vue Router, LocalStorage.
+---
+
+## 📋 Configuración de Git Project (Tasks & Hours)
+
+Copia estas tareas en tu tablero de Git Project para cumplir con el 100% de los requerimientos.
+
+### [HUS-01] Autenticación (Login) - 3.0h Totales
+1. **[HUS-01-T1] Formulario Login Quasar (Frontend | UI | Alta | 0.5h | Branch: andft)**
+   > *C1: Validar formato de correo y dominio @sanjose.edu.co.*
+2. **[HUS-01-T2] Errores Genéricos y C3: Recuperación (Frontend | UI | Media | 0.5h | Branch: andft)**
+   > *C2: Mostrar mensaje genérico de error y enlace de recuperación.*
+3. **[HUS-01-T3] Persistencia en LocalStorage (Frontend | Storage | Media | 1.0h | Branch: andft)**
+   > *Cuidado: Mantener sesión funcional tras recargar navegador.*
+4. **[HUS-01-T4] Lógica de Bloqueo C4 (Backend | Auth | Alta | 1.0h | Branch: dfaparicio)**
+   > *Bloquear cuenta por 15 minutos tras 3 intentos fallidos.*
+
+### [HUS-02] Registro de Usuarios - 2.5h Totales
+5. **[HUS-02-T1] Formulario de Registro C1 (Frontend | UI | Alta | 0.5h | Branch: andft)**
+   > *Capturar: Nombre, Documento, Correo, Rol y Contraseña.*
+6. **[HUS-02-T2] Esquema Usuario Mongoose C3 (Backend | Database | Alta | 1.0h | Branch: dfaparicio)**
+   > *Verificar unicidad de correo y documento identidad.*
+7. **[HUS-02-T3] Política Seguridad C2 (Backend | Security | Media | 0.5h | Branch: dfaparicio)**
+   > *Contraseña: Mín 8 carac, 1 Mayús, 1 Num, 1 Especial.*
+8. **[HUS-02-T4] Correo de Bienvenida C4 (Backend | API | Baja | 0.5h | Branch: dfaparicio)**
+   > *Simular envío de instrucciones al finalizar el registro.*
+
+### [HUS-03] Dashboard Principal - 2.5h Totales
+9. **[HUS-03-T1] Horario Docente C1 (Frontend | UI | Media | 1.0h | Branch: andft)**
+   > *Mostrar clases del día destacando la actual/próxima.*
+10. **[HUS-03-T2] Indicador de Asistencia C2 (Frontend | DataViz | Baja | 0.5h | Branch: andft)**
+    > *Gráfico de porcentaje de asistencia semanal acumulado.*
+11. **[HUS-03-T3] Alertas Críticas C3 & Acceso C4 (Frontend | UI | Alta | 1.0h | Branch: andft)**
+    > *Mostrar >3 fallas y botón de acceso rápido para toma de asistencia.*
+
+---
+
+## 🌳 Estrategia de Ramas
+- `main`: Código estable de producción.
+- `andft`: Desarrollo de componentes Frontend y lógica cliente.
+- `dfaparicio`: Desarrollo de Modelos, API y persistencia Backend.
+
+---
+
+## ✅ Estado de Ejecución Actual
+- [x] Estructura base Backend/Frontend (ESM, Quasar, Vite).
+- [x] Modelo de datos Usuario.js y conexión MongoDB.
+- [x] Vistas funcionales: Login, Dashboard y Registro.
+- [x] Persistencia local configurada.
+- [x] Gitignore profesional.

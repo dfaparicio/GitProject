@@ -18,6 +18,12 @@ const routes = [
         name: 'dashboard',
         component: DashboardView,
         meta: { requiresAuth: true }
+      },
+      {
+        path: 'registro',
+        name: 'registro',
+        component: () => import('../views/RegisterView.vue'),
+        meta: { requiresAuth: true }
       }
     ]
   }

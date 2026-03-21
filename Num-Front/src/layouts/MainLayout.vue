@@ -31,6 +31,15 @@
           </q-item-section>
         </q-item>
 
+        <q-item clickable to="/registro" exact>
+          <q-item-section avatar>
+            <q-icon name="person_add" />
+          </q-item-section>
+          <q-item-section>
+            <q-item-label>Registro Usuarios</q-item-label>
+          </q-item-section>
+        </q-item>
+
         <q-item clickable @click="notifyNotImplemented">
           <q-item-section avatar>
             <q-icon name="people" />
