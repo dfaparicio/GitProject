@@ -25,37 +25,43 @@ Proyecto de digitalización para el control de asistencia de 1.200 estudiantes y
 
 ---
 
-## 📋 Configuración de Git Project (Tasks & Hours)
-
+📋 Configuración de Git Project (Tasks & Hours)
 Copia estas tareas en tu tablero de Git Project para cumplir con el 100% de los requerimientos.
 
-### [HUS-01] Autenticación (Login) - 3.0h Totales
-1. **[HUS-01-T1] Formulario Login Quasar (Frontend | UI | Alta | 0.5h | Branch: andft)**
-   > *C1: Validar formato de correo y dominio @sanjose.edu.co.*
-2. **[HUS-01-T2] Errores Genéricos y C3: Recuperación (Frontend | UI | Media | 0.5h | Branch: andft)**
-   > *C2: Mostrar mensaje genérico de error y enlace de recuperación.*
-3. **[HUS-01-T3] Persistencia en LocalStorage (Frontend | Storage | Media | 1.0h | Branch: andft)**
-   > *Cuidado: Mantener sesión funcional tras recargar navegador.*
-4. **[HUS-01-T4] Lógica de Bloqueo C4 (Backend | Auth | Alta | 1.0h | Branch: dfaparicio)**
-   > *Bloquear cuenta por 15 minutos tras 3 intentos fallidos.*
+🔐 [HUS-01] Autenticación (Login) - 3.0h Totales
 
-### [HUS-02] Registro de Usuarios - 2.5h Totales
-5. **[HUS-02-T1] Formulario de Registro C1 (Frontend | UI | Alta | 0.5h | Branch: andft)**
-   > *Capturar: Nombre, Documento, Correo, Rol y Contraseña.*
-6. **[HUS-02-T2] Esquema Usuario Mongoose C3 (Backend | Database | Alta | 1.0h | Branch: dfaparicio)**
-   > *Verificar unicidad de correo y documento identidad.*
-7. **[HUS-02-T3] Política Seguridad C2 (Backend | Security | Media | 0.5h | Branch: dfaparicio)**
-   > *Contraseña: Mín 8 carac, 1 Mayús, 1 Num, 1 Especial.*
-8. **[HUS-02-T4] Correo de Bienvenida C4 (Backend | API | Baja | 0.5h | Branch: dfaparicio)**
-   > *Simular envío de instrucciones al finalizar el registro.*
+Responsable: andft (TODO completo)
 
-### [HUS-03] Dashboard Principal - 2.5h Totales
-9. **[HUS-03-T1] Horario Docente C1 (Frontend | UI | Media | 1.0h | Branch: andft)**
-   > *Mostrar clases del día destacando la actual/próxima.*
-10. **[HUS-03-T2] Indicador de Asistencia C2 (Frontend | DataViz | Baja | 0.5h | Branch: andft)**
-    > *Gráfico de porcentaje de asistencia semanal acumulado.*
-11. **[HUS-03-T3] Alertas Críticas C3 & Acceso C4 (Frontend | UI | Alta | 1.0h | Branch: andft)**
-    > *Mostrar >3 fallas y botón de acceso rápido para toma de asistencia.*
+[HUS-01-T1] Formulario Login Quasar (Frontend | UI | Alta | 0.5h | Branch: andft)
+C1: Validar formato de correo y dominio @sanjose.edu.co.
+[HUS-01-T2] Errores Genéricos y C3: Recuperación (Frontend | UI | Media | 0.5h | Branch: andft)
+C2: Mostrar mensaje genérico de error y enlace de recuperación.
+[HUS-01-T3] Persistencia en LocalStorage (Frontend | Storage | Media | 1.0h | Branch: andft)
+Cuidado: Mantener sesión funcional tras recargar navegador.
+[HUS-01-T4] Lógica de Bloqueo C4 (Backend | Auth | Alta | 1.0h | Branch: andft)
+Bloquear cuenta por 15 minutos tras 3 intentos fallidos.
+📝 [HUS-02] Registro de Usuarios - 2.5h Totales
+
+Responsable: dfaparicio (TODO completo)
+
+[HUS-02-T1] Formulario de Registro C1 (Frontend | UI | Alta | 0.5h | Branch: dfaparicio)
+Capturar: Nombre, Documento, Correo, Rol y Contraseña.
+[HUS-02-T2] Esquema Usuario Mongoose C3 (Backend | Database | Alta | 1.0h | Branch: dfaparicio)
+Verificar unicidad de correo y documento identidad.
+[HUS-02-T3] Política Seguridad C2 (Backend | Security | Media | 0.5h | Branch: dfaparicio)
+Contraseña: Mín 8 carac, 1 Mayús, 1 Num, 1 Especial.
+[HUS-02-T4] Correo de Bienvenida C4 (Backend | API | Baja | 0.5h | Branch: dfaparicio)
+Simular envío de instrucciones al finalizar el registro.
+📊 [HUS-03] Dashboard Principal - 2.5h Totales
+
+Responsables: andft & dfaparicio (Trabajo compartido)
+
+[HUS-03-T1] Horario Docente C1 (Frontend | UI | Media | 1.0h | Branch: andft)
+Mostrar clases del día destacando la actual/próxima.
+[HUS-03-T2] Indicador de Asistencia C2 (Frontend | DataViz | Baja | 0.5h | Branch: andft)
+Gráfico de porcentaje de asistencia semanal acumulado.
+[HUS-03-T3] Alertas Críticas C3 & Acceso C4 (Frontend | UI | Alta | 1.0h | Branch: dfaparicio)
+Mostrar >3 fallas y botón de acceso rápido para toma de asistencia.
 
 ---
 
