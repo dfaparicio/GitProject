@@ -1,27 +1,24 @@
 import express from 'express';
 import cors from 'cors';
 import dotenv from 'dotenv';
-import mongoose from 'mongoose';
+// import mongoose from 'mongoose'; // TODO: Falta configurar la base de datos
 
 dotenv.config();
 
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-// Middlewares
 app.use(cors());
 app.use(express.json());
 
-// Main Route (Health check)
 app.get('/', (req, res) => {
-  res.json({
-    message: 'API del Colegio San José - Backend Funcionando',
-    status: 'ONLINE',
-    version: '1.0.0'
-  });
+  res.json({ message: 'API del Colegio San José', status: 'ONLINE' });
 });
 
-// Start Server
+// TODO: Crear las rutas de autenticación:
+// app.post('/api/auth/login', loginHandler)
+// app.post('/api/auth/recover', recoverHandler)
+
 app.listen(PORT, () => {
-  console.log(`Servidor ejecutándose en http://localhost:${PORT}`);
+  console.log(`Servidor ejecutándose en puerto ${PORT}`);
 });
