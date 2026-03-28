@@ -9,33 +9,29 @@
           </q-avatar>
         </div>
         <h1 class="text-h4 text-bold text-navy q-my-sm">Academia San José</h1>
-        <p class="text-subtitle2 text-grey-8">Portal de Docentes y Administrativos</p>
       </q-card-section>
 
       <q-card-section>
-        <!-- Mensaje de error genérico -->
-        <transition appear enter-active-class="animated fadeIn" leave-active-class="animated fadeOut">
-          <q-banner v-if="hasError" class="bg-negative text-white q-mb-md rounded-borders text-center">
-            <q-icon name="error" size="sm" class="q-mr-sm" />
-            Usuario o contraseña incorrectos
-          </q-banner>
-        </transition>
+        <!-- Mensaje de error genérico (C2) -->
+        <q-banner v-if="loginError" dense class="bg-negative text-white q-mb-md rounded-borders">
+          <template v-slot:avatar>
+            <q-icon name="warning" />
+          </template>
+          Usuario o contraseña incorrectos
+        </q-banner>
 
         <q-form @submit="onLogin" class="q-gutter-md">
           <q-input
-            v-model.trim="email"
+            v-model="email"
             label="Correo Institucional"
             outlined
-            autofocus
             placeholder="usuario@sanjose.edu.co"
             :rules="[
               val => !!val || 'El correo es obligatorio',
-              val => isValidEmail(val) || 'Formato de correo inválido',
               val => isInstitutional(val) || 'Debe usar su correo @sanjose.edu.co'
             ]"
             bg-color="white"
             round
-            @update:model-value="hasError = false"
           >
             <template v-slot:prepend>
               <q-icon name="email" color="primary" />
@@ -49,15 +45,15 @@
             outlined
             :rules="[val => !!val || 'La contraseña es obligatoria']"
             bg-color="white"
-            @update:model-value="hasError = false"
           >
             <template v-slot:prepend>
               <q-icon name="lock" color="primary" />
             </template>
           </q-input>
 
+          <!-- Enlace de recuperación de contraseña (C3) -->
           <div class="row justify-between items-center q-mt-sm">
-            <q-btn flat no-caps color="primary" label="¿Olvidaste tu contraseña?" class="text-caption" to="/forgot-password" />
+            <q-btn flat no-caps color="primary" label="¿Olvidaste tu contraseña?" class="text-caption" to="/recuperar" />
           </div>
 
           <q-btn
@@ -71,51 +67,43 @@
           />
         </q-form>
       </q-card-section>
-      
-      <q-card-section class="text-center q-pt-none">
-        <p class="text-caption text-grey-7">
-          &copy; 2026 Colegio San José - Gestión Académica
-        </p>
-      </q-card-section>
     </q-card>
   </q-page>
 </template>
 
 <script setup>
 import { ref } from 'vue'
-import { useRouter } from 'vue-router'
 
-const router = useRouter()
 const email = ref('')
 const password = ref('')
-const hasError = ref(false)
-const isLoading = ref(false)
 const hasLogo = ref(true)
+const loginError = ref(false)
+const isLoading = ref(false)
 
-const isValidEmail = (val) => {
-  const emailPattern = /^(?=[a-zA-Z0-9@._%+-]{6,254}$)[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/
-  return emailPattern.test(val)
+const isInstitutional = (val) => {
+  return val.endsWith('@sanjose.edu.co')
 }
 
-const isInstitutional = (val) => val.endsWith('@sanjose.edu.co')
-
 const onLogin = async () => {
-  isLoading.value = true
-  hasError.value = false
+  isLoading.value = true;
+  loginError.value = false;
   
   try {
-    // TODO: Implementar la llamada al servicio de autenticación del backend (Num-Back)
-    // Ejemplo: const response = await authService.login(email.value, password.value)
+    // TODO: Falta la llamada a la API para hacer el login real.
+    // Simulación de error (credentials erróneas):
+    if (email.value !== 'admin@sanjose.edu.co' || password.value !== '123456') {
+      throw new Error('Invalid credentials');
+    }
     
-    // Simulando una llamada al backend que devuelve un error de credenciales
-    await new Promise(resolve => setTimeout(resolve, 1500))
-    throw new Error('Credenciales inválidas')
+    // Si el login es exitoso:
+    console.log("Login exitoso");
+    // TODO: Falta redirigir al Dashboard
     
   } catch (error) {
-    // C2: Mostrar mensaje genérico sin revelar si el correo existe
-    hasError.value = true
+    // Se muestra el error genérico sin dar detalles (C2)
+    loginError.value = true;
   } finally {
-    isLoading.value = false
+    isLoading.value = false;
   }
 }
 </script>
@@ -126,23 +114,11 @@ const onLogin = async () => {
   position: relative;
   overflow: hidden;
 }
-
-.bg-gradient::before {
-  content: '';
-  position: absolute;
-  width: 150%;
-  height: 150%;
-  background: radial-gradient(circle at center, rgba(255, 215, 0, 0.1) 0%, transparent 70%);
-  top: -25%;
-  left: -25%;
-}
-
 .bg-premium-glass {
   background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(15px);
-  border: 4px solid #FFD700; // Gold border for institutional feel
+  border: 4px solid #FFD700;
 }
-
 .text-navy {
   color: #003366;
 }
