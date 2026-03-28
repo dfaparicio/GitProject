@@ -11,20 +11,24 @@
         </p>
 
         <!-- Mensaje de confirmación genérico: siempre muestra que se envió para no revelar correos -->
-        <q-banner v-if="emailSent" class="bg-positive text-white rounded-borders q-pa-md text-center">
-          <q-icon name="check_circle" size="md" class="q-mb-sm" />
-          <div>Si el correo existe en nuestro sistema, hemos enviado un enlace de recuperación. Por favor, revisa tu bandeja de entrada.</div>
-        </q-banner>
+        <transition appear enter-active-class="animated fadeIn" leave-active-class="animated fadeOut">
+          <q-banner v-if="emailSent" class="bg-positive text-white rounded-borders q-pa-md text-center">
+            <q-icon name="check_circle" size="md" class="q-mb-sm" />
+            <div>Si el correo existe en nuestro sistema, hemos enviado un enlace de recuperación. Por favor, revisa tu bandeja de entrada.</div>
+            <q-btn flat no-caps color="white" label="Volver al Login" class="q-mt-sm" to="/login" />
+          </q-banner>
+        </transition>
 
-        <q-form v-else @submit="onRecover" class="q-gutter-md q-mt-lg">
+        <q-form v-if="!emailSent" @submit="onRecover" class="q-gutter-md q-mt-lg">
           <q-input
-            v-model="email"
+            v-model.trim="email"
             label="Correo Institucional"
             outlined
+            autofocus
             placeholder="usuario@sanjose.edu.co"
             :rules="[
               val => !!val || 'El correo es obligatorio',
-              val => val.includes('@sanjose.edu.co') || 'Debe ser un correo institucional'
+              val => val.toLowerCase().endsWith('@sanjose.edu.co') || 'Debe ser un correo institucional'
             ]"
             bg-color="white"
           >
