@@ -1,17 +1,7 @@
-# Configuración de Git para el Proyecto
-
 # Dependencias
 node_modules/
 Num-Back/node_modules/
 Num-Front/node_modules/
-
-# Variables de Entorno (SEGURIDAD)
-.env
-Num-Back/.env
-
-# Compilación y Distribución
-dist/
-Num-Front/dist/
 
 # Logs y Errores
 *.log
