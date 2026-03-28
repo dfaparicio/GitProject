@@ -1,34 +1,39 @@
 const Usuario = require('../models/Usuario');
+const { hashPassword } = require('../helpers/hashPassword');
 
-const registrarUsuario = async (req, res) => {
+/**
+ * Registra un nuevo docente o personal administrativo.
+ * Delega los errores al middleware central de errores (como el de duplicidad 11000).
+ */
+const registrarUsuario = async (req, res, next) => {
   try {
     const { nombre, documento, email, rol, password } = req.body;
 
-    // Verificar si el usuario ya existe por documento o email
-    const usuarioExistente = await Usuario.findOne({ $or: [{ documento }, { email }] });
-    if (usuarioExistente) {
-      return res.status(400).json({ msg: 'El usuario con ese documento o email ya está registrado' });
-    }
+    // 1. Hashear la contraseña antes de guardar (C3)
+    const passwordHasheada = await hashPassword(password);
 
+    // 2. Crear nueva instancia de usuario con timestamps automáticos
     const nuevoUsuario = new Usuario({
       nombre,
       documento,
       email,
       rol,
-      password // Nota: En una implementación real, aquí se debe hashear la contraseña
+      password: passwordHasheada
     });
 
+    // 3. Guardar en la base de datos (se validan unique: true en el modelo)
     await nuevoUsuario.save();
 
+    // 4. Respuesta exitosa
     res.status(201).json({
       ok: true,
       msg: 'Usuario registrado exitosamente',
-      usuario: { nombre, email, rol }
+      usuario: { nombre, documento, email, rol }
     });
 
   } catch (error) {
-    console.error('Error en registro:', error);
-    res.status(500).json({ msg: 'Hubo un error al registrar el usuario' });
+    // Pasar el error al middleware errorHandler
+    next(error);
   }
 };
 
