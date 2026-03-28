@@ -24,7 +24,7 @@ myApp.use(Quasar, {
   config: {
     brand: {
       primary: '#003366',
-      secondary: '#FFD700'
+      secondary: '#2eaf11de'
     }
   }
 })
