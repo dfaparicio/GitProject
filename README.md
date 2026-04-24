@@ -93,3 +93,5 @@ Mostrar >3 fallas y botón de acceso rápido para toma de asistencia.
 - [x] Vistas funcionales: Login, Dashboard y Registro.
 - [x] Persistencia local configurada.
 - [x] Gitignore profesional.
+- [x] [HUS-01-T2] Errores Genéricos y Recuperación (Completado).
+
