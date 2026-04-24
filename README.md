@@ -94,5 +94,6 @@ Mostrar >3 fallas y botón de acceso rápido para toma de asistencia.
 - [x] Persistencia local configurada.
 - [x] Gitignore profesional.
 - [x] [HUS-01-T2] Errores Genéricos y Recuperación (Completado).
+- [x] [HUS-01-T1] Formulario Login Quasar (Completado).
 
 
