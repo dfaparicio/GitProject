@@ -95,3 +95,4 @@ Mostrar >3 fallas y botón de acceso rápido para toma de asistencia.
 - [x] Gitignore profesional.
 - [x] [HUS-01-T2] Errores Genéricos y Recuperación (Completado).
 
+
