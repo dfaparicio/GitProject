@@ -9,6 +9,9 @@ const registrarUsuario = async (req, res, next) => {
   try {
     const { nombre, documento, email, rol, password } = req.body;
 
+    // TODO: Validar política de contraseñas (HUS-02, C2) antes del hasheo
+    // Mínimo 8 caracteres, 1 mayúscula, 1 número, 1 carácter especial.
+
     // 1. Hashear la contraseña antes de guardar (C3)
     const passwordHasheada = await hashPassword(password);
 
